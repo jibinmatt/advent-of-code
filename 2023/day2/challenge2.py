@@ -7,11 +7,9 @@ def solution():
   for line in Lines:
     line = line.split(":")[1].strip() # removes 'Game No.:' and strips whitespaces
     rounds = line.split("; ") # splits a game record into its rounds as list of substrings around '; '
-    print(f"rounds: {rounds}")
     red_count, blue_count, green_count = 0, 0, 0
 
     for single_round in rounds:
-      print(f"single_round: {single_round}")
       split_round = single_round.replace(",", "").split()
 
       if "red" in split_round:
@@ -30,14 +28,8 @@ def solution():
         if green_value > green_count:
           green_count = green_value
 
-    print(f"red_count: {red_count}")
-    print(f"blue_count: {blue_count}")
-    print(f"green_count: {green_count}")
-
     power = red_count * blue_count * green_count
     sum += power
-    print(f"power: {power}")
-    print(f"sum: {sum}")
 
   print(f"final sum: {sum}\n")
     
